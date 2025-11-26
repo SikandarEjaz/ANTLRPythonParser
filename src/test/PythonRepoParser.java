@@ -36,9 +36,7 @@ public class PythonRepoParser {
             ErrorListener errorListener = new ErrorListener();
             parser.removeErrorListeners();
             parser.addErrorListener(errorListener);
-            
-            // ParseTree tree = parser.file_input();
-            
+                        
             return !errorListener.hasErrors;
             
         } catch (Exception e) {
@@ -151,8 +149,8 @@ public class PythonRepoParser {
     }
     
     public static void parseRepository(String repoPath) throws IOException {
-       // int successCount = 0;
-       // int failCount = 0;
+       int successCount = 0;
+       int failCount = 0;
         
         Files.walk(Paths.get(repoPath))
             .filter(Files::isRegularFile)
